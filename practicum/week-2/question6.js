@@ -6,5 +6,14 @@ output: 3
 */
 
 var median = function(input) {
-
+input = input.sort();
+if (input.length % 2 == 0){
+	var first = input.length / 2 + 0.5;
+	var second = first + 1;
+	return (first + second) / 2;
+}
+else{
+	var leng = (input.length / 2) - 0.5;
+	return input[leng];
+}	
 };

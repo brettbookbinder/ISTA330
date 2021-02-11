@@ -11,5 +11,6 @@ output: 4
 */
 
 var maxSumOfMins = function(input) {
-
+	var maxSum = 0;
+	
 };
