@@ -1,135 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="question">
-        Using the array flowers below, <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <style>
-        #flowersDiv {
-            display: grid;
-            grid-template-columns: 25%;
-              grid-template-rows: 25%;
+        Using the array flowers below,
+        <!DOCTYPE html>
+        <html lang="en">
 
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+
+        <body>
+            <style>
+                #flowersDiv {
+                    display: grid;
+                    grid-template-columns: 25%;
+                    grid-template-rows: 25%;
+
+                }
+            </style>
+            <div id="question">
+                Using the array flowers below,
+                display the flowers. Use the div 'flowersDiv'.
+                You should display the flowers in two rows,
+                each row containing 4 flowers.
+                For each flower, you should show the image
+                and under the image display its name.
+            </div>
+            <div id='flowersDiv'>
+
+            </div>
+            <script>
+                /*
+                   Using the array flowers below, 
+                   display the flowers. Use the div 'flowersDiv'.
+                   You should display the flowers in two rows,
+                   each row containing 4 flowers.
+                   For each flower, you should show the image
+                   and under the image display its name.
+                */
+                class Flower {
+                    constructor(name, pictureName) {
+                        this.name = name;
+                        this.picture = pictureName;
+                    }
+                }
+                let daffodil = new Flower('Daffodil', 'daffodil.png');
+                let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
+                let lily = new Flower('Lily', 'lily.jpg');
+                let daisy = new Flower('Daisy', 'daisy.jpg');
+                let sunflower = new Flower('Sunflower', 'sunflower.png');
+                let tulip = new Flower('Tulip', 'tulip.png');
+                let rose = new Flower('Rose', 'rose.png');
+                let waterlily = new Flower('Water lily', 'waterlily.png');
+
+                let flowers = [
+                    daffodil,
+                    cherryblossom,
+                    lily,
+                    daisy,
+                    sunflower,
+                    tulip,
+                    rose,
+                    waterlily
+                ];
+                let flowersContainer = document.getElementById("flowersDiv");
+                let table = document.createElement("table");
+                let row1 = document.createElement("tr")
+                let row2 = document.createElement("tr")
+                table.appendChild(row1);
+                table.appendChild(row2);
+                let rows = table.children;
+                for (var i = 0; i < flowers.length; i++) {
+                    let rowIndex = i < 4 ? 0 : 1;
+                    let flower = flowers[i];
+                    let flowerContainer = document.createElement("td");
+                    let flowerImg = document.createElement("img");
+                    flowerImg.src = "./images/" + flower.picture;
+                    let flowerName = document.createElement("p");
+                    flowerName.textContent = flower.name;
+                    flowerContainer.appendChild(flowerImg);
+                    flowerContainer.appendChild(flowerName);
+                    let rowContainer = rows[rowIndex];
+                    rowContainer.appendChild(flowerContainer);
+                }
+                flowersContainer.appendChild(table);
+            </script>
+        </body>
+
+        </html>
+    </div>
+    <div id='flowersDiv'>
+
+    </div>
+    <script>
+        /*
+           Using the array flowers below, 
+           display the flowers. Use the div 'flowersDiv'.
+           You should display the flowers in two rows,
+           each row containing 4 flowers.
+           For each flower, you should show the image
+           and under the image display its name.
+        */
+        class Flower {
+            constructor(name, pictureName) {
+                this.name = name;
+                this.picture = pictureName;
+            }
         }
-    </style>
-    <div id="question">
-        Using the array flowers below, 
-        display the flowers. Use the div 'flowersDiv'.
-        You should display the flowers in two rows,
-        each row containing 4 flowers.
-        For each flower, you should show the image
-        and under the image display its name.
-    </div>
-    <div id='flowersDiv'>
+        let daffodil = new Flower('Daffodil', 'daffodil.png');
+        let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
+        let lily = new Flower('Lily', 'lily.jpg');
+        let daisy = new Flower('Daisy', 'daisy.jpg');
+        let sunflower = new Flower('Sunflower', 'sunflower.png');
+        let tulip = new Flower('Tulip', 'tulip.png');
+        let rose = new Flower('Rose', 'rose.png');
+        let waterlily = new Flower('Water lily', 'waterlily.png');
 
-    </div>
-    <script>
-        /*
-           Using the array flowers below, 
-           display the flowers. Use the div 'flowersDiv'.
-           You should display the flowers in two rows,
-           each row containing 4 flowers.
-           For each flower, you should show the image
-           and under the image display its name.
-        */
-       class Flower {
-           constructor(name, pictureName) {
-               this.name = name;
-               this.picture = pictureName;
-           }
-       }
-       let daffodil = new Flower('Daffodil', 'daffodil.png');
-       let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-       let lily = new Flower('Lily', 'lily.jpg');
-       let daisy = new Flower('Daisy', 'daisy.jpg');
-       let sunflower = new Flower('Sunflower', 'sunflower.png');
-       let tulip = new Flower('Tulip', 'tulip.png');
-       let rose = new Flower('Rose', 'rose.png');
-       let waterlily = new Flower('Water lily', 'waterlily.png');
-       
-       let flowers = [
-             daffodil,
-             cherryblossom,
-             lily,
-             daisy,
-             sunflower,
-             tulip,
-             rose,
-             waterlily
-       ];
-       let flowersContainer = document.getElementById("flowersDiv");
-       let table = document.createElement("table");
-       let row1 = document.createElement("tr")
-              let row2 = document.createElement("tr")
-       table.appendChild(row1);
-       table.appendChild(row2);
-       let rows = table.children;
-       for (var i = 0; i < flowers.length; i++) {
-           let rowIndex = i < 4 ? 0 : 1;
-           let flower = flowers[i];
-           let flowerContainer = document.createElement("td");
-           let flowerImg = document.createElement("img");
-           flowerImg.src = "./images/" + flower.picture;
-           let flowerName = document.createElement("p");
-           flowerName.textContent = flower.name;
-           flowerContainer.appendChild(flowerImg);
-           flowerContainer.appendChild(flowerName);
-           let rowContainer = rows[rowIndex];
-           rowContainer.appendChild(flowerContainer);
-       }
-        flowersContainer.appendChild(table);
+        let flowers = [
+            daffodil,
+            cherryblossom,
+            lily,
+            daisy,
+            sunflower,
+            tulip,
+            rose,
+            waterlily
+        ];
     </script>
 </body>
-</html>
-    </div>
-    <div id='flowersDiv'>
 
-    </div>
-    <script>
-        /*
-           Using the array flowers below, 
-           display the flowers. Use the div 'flowersDiv'.
-           You should display the flowers in two rows,
-           each row containing 4 flowers.
-           For each flower, you should show the image
-           and under the image display its name.
-        */
-       class Flower {
-           constructor(name, pictureName) {
-               this.name = name;
-               this.picture = pictureName;
-           }
-       }
-       let daffodil = new Flower('Daffodil', 'daffodil.png');
-       let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-       let lily = new Flower('Lily', 'lily.jpg');
-       let daisy = new Flower('Daisy', 'daisy.jpg');
-       let sunflower = new Flower('Sunflower', 'sunflower.png');
-       let tulip = new Flower('Tulip', 'tulip.png');
-       let rose = new Flower('Rose', 'rose.png');
-       let waterlily = new Flower('Water lily', 'waterlily.png');
-       
-       let flowers = [
-             daffodil,
-             cherryblossom,
-             lily,
-             daisy,
-             sunflower,
-             tulip,
-             rose,
-             waterlily
-       ];
-    </script>
-</body>
 </html>
